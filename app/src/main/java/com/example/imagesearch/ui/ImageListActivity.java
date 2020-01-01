@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.example.imagesearch.R;
 import com.example.imagesearch.adapter.RecyclerViewAdapter;
@@ -58,10 +59,9 @@ public class ImageListActivity extends AppCompatActivity {
                             progressBar.setVisibility(View.GONE);
                             setAdapter(imageListResult.data);
                             break;
-
-
                         case ERROR:
                             showProgressBar(false);
+                            Toast.makeText(ImageListActivity.this,"Error",Toast.LENGTH_LONG).show();
                             break;
 
                     }

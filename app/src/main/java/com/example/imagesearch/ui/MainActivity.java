@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.imagesearch.R;
 import com.example.imagesearch.viewmodels.MainAtivityViewModel;
@@ -34,7 +35,12 @@ public class MainActivity extends AppCompatActivity {
         searchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                passIntent();
+                if(searchBox.getText().toString().equals("")){
+                    Toast.makeText(MainActivity.this,"Enter search keyword",Toast.LENGTH_LONG).show();
+                }else {
+                    passIntent();
+                }
+
             }
         });
 
